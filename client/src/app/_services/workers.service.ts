@@ -16,9 +16,19 @@ export class WorkersService {
     return this.http.get<Zaposlenik[]>(this.baseUrl + 'workers/workers')
   }
 
-  dohvatiZaposlenik(id:number)
+  dohvatiZaposlenika(id:number)
   {
-    return this.http.get<Zaposlenik>(this.baseUrl + 'workers' + id);
+    return this.http.get<Zaposlenik>(this.baseUrl + 'workers/workers/' + id);
+  }
+
+  azurirajZaposlenika(zaposlenik:Zaposlenik)
+  {
+    return this.http.put(this.baseUrl+'workers/' + zaposlenik.id,zaposlenik);
+  }
+
+  dodajZaposlenika(zaposlenik:Zaposlenik)
+  {
+    return this.http.post(this.baseUrl+'workers/dodajZaposlenika',zaposlenik);
   }
 
 }

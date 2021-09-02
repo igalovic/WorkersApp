@@ -1,0 +1,43 @@
+<form [formGroup]='zaposlenikForm' (ngSubmit)="zaposlenikForm.valid && dodajZaposlenika()" autocomplete="off">
+    <h2 class="text-center text-primary">Dodaj zaposlenika</h2>
+    <hr>
+
+
+
+    <app-text-input [formControl]='zaposlenikForm.controls["ime"]' [label]='"Ime"'></app-text-input>
+    <app-text-input [formControl]='zaposlenikForm.controls["prezime"]' [label]='"Prezime"'></app-text-input>
+    <app-text-input [formControl]='zaposlenikForm.controls["slika"]' [label]='"Slika"'></app-text-input>
+    <div class="form-group"></div>
+    <label for="spol">Spol: </label> 
+    <select id="spol" name="spol" formControlName="spol">
+        <option id="1" value="Musko">Muško</option>
+        <option id="2" value="Zensko">Žensko</option>
+    </select>
+    <app-text-input [formControl]='zaposlenikForm.controls["godinaRodenja"]' [label]='"GodinaRodenja"'>
+    </app-text-input>
+    <app-text-input [formControl]='zaposlenikForm.controls["pocetakRada"]' [label]='"PocetakRada"' [type]="'datetime-local'">
+    </app-text-input>
+    <div class="form-group"></div>
+    <label for="vrstaUgovora">Vrsta ugovora: </label>
+    <select id="vrstaUgovora" name="vrstaUgovora" formControlName="vrstaUgovora">
+        <option id="1" value="Odredeno">Određeno</option>
+        <option id="2" value="Neodredeno">Neodređeno</option>
+    </select>
+    <app-text-input [formControl]='zaposlenikForm.controls["trajanjeUgovora"]' [label]='"TrajanjeUgovora"'>
+    </app-text-input>
+    <app-text-input [formControl]='zaposlenikForm.controls["odjel"]' [label]='"Odjel"'>
+    </app-text-input>
+
+    <div class="row" *ngIf="validationErrors.length > 0">
+        <ul class="text-danger">
+            <li *ngFor="let error of validationErrors">
+                {{error}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="form-group text-center">
+        <button [disabled]='!zaposlenikForm.valid' class="btn btn-success mr-2" type="submit">Dodaj zaposlenika</button>
+        <button class="btn btn-default mr-2" (click)="cancel()" type="button">Odustani</button>
+    </div>
+</form>

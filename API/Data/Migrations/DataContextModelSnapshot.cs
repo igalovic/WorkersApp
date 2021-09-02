@@ -22,7 +22,7 @@ namespace API.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("BrojDanaGodišnjegOdmora")
+                    b.Property<int?>("BrojDanaGodisnjegOdmora")
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("BrojDanaPlacenogDopusta")

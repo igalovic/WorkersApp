@@ -14,7 +14,7 @@ namespace API.Entities
         public string VrstaUgovora { get; set; }
         public int TrajanjeUgovora { get; set; }
         public string Odjel { get; set; }
-        public int? BrojDanaGodišnjegOdmora { get; set; }
+        public int? BrojDanaGodisnjegOdmora { get; set; }
         public int? BrojSlobodnihDana { get; set; }
         public int? BrojDanaPlacenogDopusta { get; set; }
     }

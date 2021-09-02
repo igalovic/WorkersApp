@@ -1,0 +1,85 @@
+<!--<h1 *ngIf="zaposlenik">{{zaposlenik.odjel}}</h1> -->
+<div class="row" *ngIf="zaposlenik">
+    <div class="col-10">
+        <div class="alert alert-info" *ngIf="editForm.dirty">
+            <strong>Obavijest: </strong> Napravili ste promjene. Bilo koji ne spremljeni podaci će biti izgubljeni
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+            <img src="{{zaposlenik.slika || './assets/user.png'}}" alt="{{zaposlenik.ime}}"
+                class="card-img-top img-thumbnail">
+            <div class="card-body">
+                <div>
+                    <strong>Odjel:</strong>
+                    <p>{{zaposlenik.odjel}}</p>
+                </div>
+                <div>
+                    <strong>Trajanje Ugovora:</strong>
+                    <p>{{zaposlenik.trajanjeUgovora}}</p>
+                </div>
+                <div>
+                    <strong>Godina rođenja:</strong>
+                    <p>{{zaposlenik.godinaRodenja}}</p>
+                </div>
+                <div>
+                    <strong>Spol:</strong>
+                    <p>{{zaposlenik.spol}}</p>
+                </div>
+                <div>
+                    <strong>Vrsta ugovora:</strong>
+                    <p>{{zaposlenik.vrstaUgovora}}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="btn-group d-flex">
+                        <button [disabled]="!editForm.dirty" form="editForm" type="submit"
+                            class="btn btn-primary">Azuriraj</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-8">
+        <tabset class="member-tabset">
+            <tab heading='Informacije o {{zaposlenik.ime}} {{zaposlenik.prezime}}'>
+                <form #editForm="ngForm" id="editForm" (ngSubmit)="azurirajZaposlenika()">
+                    <h6 class="mt-2">Ime</h6>
+                    <textarea class="form-control" [(ngModel)]="zaposlenik.ime" name="ime"
+                        rows="1"></textarea>
+                        <h6 class="mt-2">Prezime</h6>
+                    <textarea class="form-control" [(ngModel)]="zaposlenik.prezime" name="prezime"
+                        rows="1"></textarea>
+                        <h6 class="mt-2">Spol</h6>
+                        <select class="form-control" [(ngModel)]="zaposlenik.spol" id="spol" name="spol">
+                            <option id="1" value="Musko">Muško</option>
+                            <option id="2" value="Zensko">Žensko</option>
+                        </select>
+                    <h6 class="mt-2">Pocetak rada</h6>
+                    <input class="form-control" [(ngModel)]="zaposlenik.pocetakRada" name="pocetakRada"
+                        rows="1" type="datetime-local">
+                    <h6 class="mt-2">Vrsta ugovora</h6>
+                    <select class="form-control" [(ngModel)]="zaposlenik.vrstaUgovora" id="vrstaUgovora" name="vrstaUgovora">
+                        <option id="1" value="Odredeno">Određeno</option>
+                        <option id="2" value="Neodredeno">Neodređeno</option>
+                    </select>
+                    <h6 class="mt-2">Trajanje ugovora u mjesecima</h6>
+                    <textarea class="form-control" [(ngModel)]="zaposlenik.trajanjeUgovora" name="trajanjeUgovora"
+                        rows="1"></textarea>
+                    <h6 class="mt-2">Odjel</h6>
+                    <textarea class="form-control" [(ngModel)]="zaposlenik.odjel" name="odjel"
+                        rows="1"></textarea>
+                    <h6 class="mt-2">Broj dana godišnjeg odmora</h6>
+                    <textarea class="form-control" [(ngModel)]="zaposlenik.brojDanaGodisnjegOdmora" name="brojDanaGodisnjegOdmora"
+                        rows="1"></textarea>
+                    <h6 class="mt-2">Broj slobodnih dana</h6>
+                    <textarea class="form-control" [(ngModel)]="zaposlenik.brojSlobodnihDana" name="brojSlobodnihDana"
+                        rows="1"></textarea>
+                    <h6 class="mt-2">Broj dana plaćenog dopusta</h6>
+                    <textarea class="form-control" [(ngModel)]="zaposlenik.brojDanaPlacenogDopusta" name="brojDanaPlacenogDopusta"
+                        rows="1"></textarea>
+                </form>
+            </tab>
+        </tabset>
+    </div>
+</div>

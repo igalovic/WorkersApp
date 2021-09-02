@@ -9,7 +9,7 @@ export interface Zaposlenik{
      vrstaUgovora:string;
      trajanjeUgovora:number;
      odjel:string; 
-     brojDanaGodišnjegOdmora :number;
+     brojDanaGodisnjegOdmora :number;
      brojSlobodnihDana:number;
      brojDanaPlacenogDopusta:number; 
 }

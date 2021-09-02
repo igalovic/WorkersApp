@@ -48,7 +48,7 @@ namespace API.Data
                            VrstaUgovora = A.VrstaUgovora,
                            TrajanjeUgovora = A.TrajanjeUgovora,
                            Odjel = A.Odjel,
-                           BrojDanaGodišnjegOdmora = A.BrojDanaGodišnjegOdmora,
+                           BrojDanaGodisnjegOdmora = A.BrojDanaGodisnjegOdmora,
                            BrojSlobodnihDana = A.BrojSlobodnihDana,
                            BrojDanaPlacenogDopusta = A.BrojDanaPlacenogDopusta
 
@@ -73,7 +73,7 @@ namespace API.Data
             zaposlenikZaAzuriranje.VrstaUgovora = zaposlenik.VrstaUgovora;
             zaposlenikZaAzuriranje.TrajanjeUgovora = zaposlenik.TrajanjeUgovora;
             zaposlenikZaAzuriranje.Odjel = zaposlenik.Odjel;
-            zaposlenikZaAzuriranje.BrojDanaGodišnjegOdmora = zaposlenik.BrojDanaGodišnjegOdmora;
+            zaposlenikZaAzuriranje.BrojDanaGodisnjegOdmora = zaposlenik.BrojDanaGodisnjegOdmora;
             zaposlenikZaAzuriranje.BrojSlobodnihDana = zaposlenik.BrojSlobodnihDana;
             zaposlenikZaAzuriranje.BrojDanaPlacenogDopusta = zaposlenik.BrojDanaPlacenogDopusta;
 

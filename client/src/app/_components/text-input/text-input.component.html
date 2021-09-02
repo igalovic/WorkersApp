@@ -1,0 +1,33 @@
+<div class="form-group">
+    <input [class.is-invalid]="ngControl.touched && ngControl.invalid"
+           type={{type}}
+           class="form-control"
+           [formControl]="ngControl.control"
+           placeholder={{label}}>
+    <div *ngIf="ngControl.control.errors?.required" class="invalid-feedback">Please enter a {{label}}</div>
+    <div *ngIf="ngControl.control.errors?.minlength" class="invalid-feedback">
+      {{label}} Mora biti barem {{ngControl.control.errors.minlength['requiredLength']}}
+    </div>
+    <div *ngIf="ngControl.control.errors?.maxlength" class="invalid-feedback">
+      {{label}} Može biti najviše {{ngControl.control.errors.maxlength['requiredLength']}}
+    </div>
+  </div>
+
+<!--<div class="form-group">
+  <label for={{type}} class="form-control" [formControl]="ngControl.control"></label>
+</div>
+<div class="form-group">
+  <select id={{type}} name={{type}} class="form-control []">
+
+  </select>
+</div>
+
+  
+  <label for="cars">Choose a car:</label>
+<select id="cars" name="cars">
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select> -->
+  
